@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/task_background"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout_top">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/new_ui_background"/>
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/new_ui_background">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left|center_vertical"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:paddingRight="4dp"
+                android:id="@+id/title_bar_menu_layout"
+                android:clickable="true"
+                android:background="@color/new_ui_background">
+                <!--<Button-->
+                <!--android:layout_width="36dp"-->
+                <!--android:layout_height="32dp"-->
+                <!--android:background="@drawable/titlebar_menu_selector"-->
+                <!--android:id="@+id/title_bar_menu"-->
+                <!--android:layout_gravity="left|center_vertical"-->
+                <!--android:layout_marginLeft="5dp"/>-->
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="7dp"
+                android:text="Title"
+                android:textSize="24sp"
+                android:textColor="@color/text_title"
+                android:id="@+id/tv_title"
+                android:layout_gravity="center"/>
+
+            <!--<Button-->
+            <!--android:layout_width="28dp"-->
+            <!--android:layout_height="28dp"-->
+            <!--android:background="@drawable/ic_action_refresh"-->
+            <!--android:id="@+id/refresh"-->
+            <!--android:layout_gravity="right|center_vertical"-->
+            <!--android:layout_marginRight="10dp"/>-->
+
+
+        </FrameLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="#0E6FA0"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="?android:attr/listDivider"
+            />
+
+        <FrameLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="5dp"
+                android:layout_height="fill_parent"
+                android:background="#e74c3c"
+                android:id="@+id/iv_status" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:paddingTop="6dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="6dp"
+                android:text="unknown location"
+                android:drawableLeft="@drawable/ic_action_place_small"
+                android:drawablePadding="10dp"
+                android:id="@+id/tv_intro" />
+
+            <ImageView
+                android:layout_width="5dp"
+                android:layout_height="fill_parent"
+                android:background="#e74c3c"
+                android:id="@+id/iv_status"
+                android:layout_gravity="right" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_horizontal|top">
+
+                </LinearLayout>
+
+        </FrameLayout>
+
+        <!--<LinearLayout-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--android:id="@+id/l_tags"-->
+        <!--android:paddingLeft="16dp"-->
+        <!--android:paddingRight="16dp"-->
+        <!--android:paddingTop="8dp"-->
+        <!--android:paddingBottom="8dp">-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/current_location"-->
+        <!--android:id="@+id/tv_guild"-->
+        <!--android:textAppearance="@style/TaskTagText"-->
+        <!--android:paddingLeft="8dp"-->
+        <!--android:paddingRight="8dp"-->
+        <!--android:paddingTop="6dp"-->
+        <!--android:paddingBottom="6dp"-->
+        <!--android:background="@drawable/back"-->
+        <!--style="@style/TaskTagText" />-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="New Text"-->
+        <!--android:id="@+id/tv_catename"-->
+        <!--android:textAppearance="@style/TaskTagText"-->
+        <!--android:paddingLeft="8dp"-->
+        <!--android:paddingRight="8dp"-->
+        <!--android:paddingTop="6dp"-->
+        <!--android:paddingBottom="6dp"-->
+        <!--android:background="@drawable/back"-->
+        <!--style="@style/TaskTagText" />-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@drawable/back"-->
+        <!--android:text="New Text"-->
+        <!--android:id="@+id/tv_locationname"-->
+        <!--android:textAppearance="@style/TaskTagText"-->
+        <!--style="@style/TaskTagText" />-->
+        <!--</LinearLayout>-->
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="?android:attr/listDivider"
+            />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:id="@+id/iv_imageattr"
+                android:scaleType="center"
+                android:src="@drawable/ic_action_take_photo"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/iv_imageattr"
+                android:layout_centerVertical="true"
+                android:id="@+id/linearLayout">
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dp"
+                    android:text=""
+                    android:id="@+id/et_taskcontent"
+                    android:textColor="@color/text_drawer"
+                    android:textSize="14sp"
+                    android:singleLine="false"
+                    android:inputType="textMultiLine"
+                    android:gravity="top"
+                    android:paddingLeft="4dp"
+                    android:background="@drawable/setbar_bg"
+                    />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="?android:attr/listDivider"
+            />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center_horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="32dp"
+                android:text="leave a footprint"
+                android:gravity="center"
+                android:id="@+id/bt_submit"
+                android:background="?attr/selectableItemBackground"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:drawableLeft="@drawable/ic_action_send_dark"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

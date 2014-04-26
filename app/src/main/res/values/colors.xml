@@ -2,11 +2,12 @@
 
 <resources>
 
-    <color name="text">#1f1f1f</color>
-    <color name="text_white">#ffffff</color>
+    <color name="text">#FCFCFC</color>
     <color name="text_light">#999999</color>
     <color name="text_inverted">#FFFFFF</color>
     <color name="text_title">#DFDFDF</color>
+    <color name="text_drawer">#333333</color>
+    <color name="background_inbutton">#76C63C</color>
     <color name="pager_footer">#1fb6ed</color>
     <color name="pager_selected_text">#FFFFFF</color>
     <color name="pager_background">#F4F4F4</color>
@@ -20,20 +21,20 @@
     <color name="header_background_end">#C3C3C3</color>
     <color name="header_background_top">#F9F9F9</color>
     <color name="header_background_bottom">#A7A7A7</color>
-    <color name="actionbar_background_start">#272727</color>
-    <color name="actionbar_background_end">#1A1A1A</color>
+    <color name="actionbar_background_start">#187ED7</color>
+    <color name="actionbar_background_end">#187ED7</color>
     <color name="bootstrap_divider_top">#000000</color>
     <color name="bootstrap_divider_bottom">#5A5A5A</color>
     <color name="main_background_start">#2E2E2E</color>
     <color name="main_background_end">#2C2C2C</color>
-    <color name="button_background_enabled_start">#8BAD27</color>
-    <color name="button_background_enabled_end">#8BAD27</color>
+    <color name="button_background_enabled_start">#1fb6ed</color>
+    <color name="button_background_enabled_end">#1c9ac8</color>
     <color name="button_background_pressed_start">#f76500</color>
     <color name="button_background_pressed_end">#fb812c</color>
     <color name="edit_text_background_start">#EFF6FF</color>
     <color name="edit_text_background_end">#FBFDFF</color>
-    <color name="button_background_disabled_start">#ff367408</color>
-    <color name="button_background_disabled_end">#ff367408</color>
+    <color name="button_background_disabled_start">#7b7b7b</color>
+    <color name="button_background_disabled_end">#646464</color>
     <color name="text_shadow">#000000</color>
 
     <color name="background_selected">#1fb6ed</color>
@@ -43,6 +44,48 @@
     <color name="nav_button_text_disabled">#464646</color>
 
     <color name="dark_grey">#1f1f1f</color>
-    <color name="navigation_drawer_item_separator">#c2c2c2</color>
+    <color name="navigation_drawer_item_separator">#F3F3F3</color>
+    <color name="task_background">#EEEEEE</color>
 
+    <color name="task_result_cnt_background">#59A3DD</color>
+    <color name="task_result_cnt_textcolor">#C3D8E8</color>
+    <color name="task_result_summary_textcolor">#888888</color>
+
+    <color name="image_border_start">#1fb6ed</color>
+    <color name="image_border_end">#1fb6ed</color>
+    <color name="image_border_center">#1fb6ed</color>
+
+
+    <!-- custom light theme: -->
+    <color name="dialog_message_text">#333333</color>
+    <color name="dialog_title_text">#f3a71e</color>
+    <color name="dialog_title_separator">#f3a71e</color>
+    <color name="dialog_button_text">#333333</color>
+    <color name="dialog_button_normal">@android:color/transparent</color>
+    <color name="dialog_button_pressed">#99f3a71e</color> <!-- 60 % opacity -->
+    <color name="dialog_button_focused">#4Cf3a71e</color> <!-- 30 % opacity -->
+    <color name="dialog_button_separator">#25000000</color> <!-- 7% opacity -->
+    <color name="background">#FFA500</color>
+    <!-- custom dark theme: -->
+    <color name="dialog_message_text_dark">#FFFFFF</color>
+    <color name="dialog_title_text_dark">#F8A500</color>
+    <color name="dialog_title_separator_dark">#F8A500</color>
+    <color name="dialog_button_text_dark">#FFFFFF</color>
+    <color name="dialog_button_normal_dark">@android:color/transparent</color>
+    <color name="dialog_button_pressed_dark">#99F8A500</color> <!-- 60 % opacity -->
+    <color name="dialog_button_focused_dark">#4CF8A500</color> <!-- 30 % opacity -->
+    <color name="dialog_button_separator_dark">#12FFFFFF</color> <!-- 7% opacity -->
+    <color name="background_dark">#C35817</color>
+
+    <color name="cate_view_list_color_a">#EBB353</color>
+    <color name="cate_view_list_color_b">#FEFEFE</color>
+
+    <color name="new_ui_background">#0E6FA0</color>
+
+    <color name="task_finish_with_answer">#00a2d3</color>
+    <color name="task_finish_with_no_answer">#c5c5c5</color>
+    <color name="task_on_going">#82d8b5</color>
+
+    <color name="bar_color_one">#ff9bd64c</color>
+    <color name="bar_color_two">#ff7ed66e</color>
 </resources>

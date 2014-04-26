@@ -10,6 +10,8 @@ import com.hkust.android.hack.flipped.ui.MainActivity;
 import com.hkust.android.hack.flipped.ui.CheckInsListFragment;
 import com.hkust.android.hack.flipped.ui.NavigationDrawerFragment;
 import com.hkust.android.hack.flipped.ui.NewsListFragment;
+import com.hkust.android.hack.flipped.ui.PostStatusActivity;
+
 import com.squareup.otto.Bus;
 
 import javax.inject.Singleton;
@@ -31,7 +33,8 @@ import dagger.Provides;
                 CheckInsListFragment.class,
                 NavigationDrawerFragment.class,
                 NewsListFragment.class,
-                BootstrapAccountRegisterActivity.class
+                BootstrapAccountRegisterActivity.class,
+                PostStatusActivity.class
         }
 )
 public class BootstrapModule {
