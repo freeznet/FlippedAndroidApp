@@ -1,7 +1,5 @@
 package com.hkust.android.hack.flipped.core;
 
-import android.text.TextUtils;
-
 import java.io.Serializable;
 
 public class User implements Serializable {
@@ -10,7 +8,7 @@ public class User implements Serializable {
 
     protected String username;
     protected String email;
-    protected String sessionToken;
+    protected String sessionid;
     protected String photo;
     protected String wechat;
     protected String twitter;
@@ -33,12 +31,12 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public String getSessionToken() {
-        return sessionToken;
+    public String getSessionid() {
+        return sessionid;
     }
 
-    public void setSessionToken(String sessionToken) {
-        this.sessionToken = sessionToken;
+    public void setSessionid(String sessionid) {
+        this.sessionid = sessionid;
     }
 
     public String getPhoto() {

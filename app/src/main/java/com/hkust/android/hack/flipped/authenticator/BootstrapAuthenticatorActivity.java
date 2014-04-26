@@ -73,7 +73,7 @@ public class BootstrapAuthenticatorActivity extends ActionBarAccountAuthenticato
     /**
      * PARAM_USERNAME
      */
-    public static final String PARAM_USERNAME = "username";
+    public static final String PARAM_USERNAME = "email";
 
     /**
      * PARAM_AUTHTOKEN_TYPE
@@ -253,9 +253,7 @@ public class BootstrapAuthenticatorActivity extends ActionBarAccountAuthenticato
                 final String query = String.format("%s=%s&%s=%s",
                         PARAM_USERNAME, email, PARAM_PASSWORD, password);
 
-                final HttpRequest request = get(URL_AUTH + "?" + query)
-                        .header(HEADER_PARSE_APP_ID, PARSE_APP_ID)
-                        .header(HEADER_PARSE_REST_API_KEY, PARSE_REST_API_KEY);
+                final HttpRequest request = get(URL_AUTH + "?" + query);
 
 
                 Ln.d("Authentication response=%s", request.code());
@@ -265,7 +263,7 @@ public class BootstrapAuthenticatorActivity extends ActionBarAccountAuthenticato
                             Strings.toString(request.buffer()),
                             User.class
                     );
-                    token = model.getSessionToken();
+                    token = model.getSessionid();
                 }
 
                 return request.ok();

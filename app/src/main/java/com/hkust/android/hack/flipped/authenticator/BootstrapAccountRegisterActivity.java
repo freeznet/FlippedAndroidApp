@@ -58,6 +58,7 @@ public class BootstrapAccountRegisterActivity extends ActionBarAccountAuthentica
      * PARAM_USERNAME
      */
     public static final String PARAM_USERNAME = "username";
+    public static final String PARAM_EMAIL = "email";
 
     /**
      * PARAM_AUTHTOKEN_TYPE
@@ -245,7 +246,7 @@ public class BootstrapAccountRegisterActivity extends ActionBarAccountAuthentica
         if (authenticationTask != null)
             return;
 
-//        username = accountID.getText().toString();
+        username = mEtName.getText().toString();
         emailadd = mEtEmail.getText().toString();
         pass = mEtPassword.getText().toString();
         showProgress();
@@ -253,7 +254,7 @@ public class BootstrapAccountRegisterActivity extends ActionBarAccountAuthentica
         authenticationTask = new SafeAsyncTask<Boolean>() {
             public Boolean call() throws Exception {
 
-                final String query = String.format("{\"username\":\"\", \"password\":\"%s\", \"email\":\"%s\"}", pass, emailadd);
+                final String query = String.format("data={\"username\":\"%s\", \"password\":\"%s\", \"email\":\"%s\"}", username, pass, emailadd);
 
                 HttpRequest request = post(Constants.Http.URL_REG).contentType("application/json").send(query);
 

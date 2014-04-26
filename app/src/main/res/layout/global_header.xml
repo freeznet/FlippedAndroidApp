@@ -4,6 +4,78 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout_top">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@drawable/actionbar_background"/>
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/header_background">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left|center_vertical"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:paddingRight="4dp"
+                android:id="@+id/title_bar_menu_layout"
+                android:clickable="true"
+                >
+                <Button
+                    android:layout_width="36dp"
+                    android:layout_height="32dp"
+                    android:id="@+id/title_bar_menu"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="5dp"/>
+            </FrameLayout>
+
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="7dp"
+                android:text="Title"
+                android:textSize="24sp"
+                android:textColor="@color/text_title"
+                android:id="@+id/tv_title"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/ic_action_refresh"
+                android:id="@+id/refresh"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dp"/>
+
+            <Button
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:id="@+id/location"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="48dp"/>
+
+
+        </FrameLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="#0E6FA0"/>
+
+    </LinearLayout>
 
 
 </LinearLayout>
