@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainView"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/feed_item_bg" >
+
+    <!-- timeline on left -->
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent" >
+
+        <ImageView
+            android:id="@+id/timeline_track"
+            android:layout_width="4dip"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="72.0dip"
+            android:background="@color/red"
+            android:scaleType="fitXY"
+            android:src="@drawable/feed_item_track" />
+    </RelativeLayout>
+
+    <!--     <com.ckt.vas.miles.ui.views.ObservableListView
+            android:id="@+id/list_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:cacheColorHint="@color/clear"
+            android:divider="@drawable/moment_divider"
+            android:dividerHeight="4.0px"
+            android:listSelector="@color/clear"
+            android:paddingTop="44.0dip"
+            android:scrollbars="vertical"
+            android:scrollingCache="false" /> -->
+
+    <com.hkust.android.hack.flipped.ui.view.ExtendedListView
+        xmlns:miles="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/list_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:cacheColorHint="@color/clear"
+        android:divider="@drawable/moment_divider"
+        android:dividerHeight="4.0px"
+        android:listSelector="@color/clear"
+        android:paddingTop="44.0dip"
+        android:scrollbars="vertical"
+        android:scrollingCache="false"
+        miles:scrollBarPanel="@layout/clock"
+        miles:scrollBarPanelInAnimation="@anim/in"
+        miles:scrollBarPanelOutAnimation="@anim/out"
+        />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <include
+            android:id="@+id/clock"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="40dp"
+            layout="@layout/clock" />
+    </RelativeLayout>
+
+
+    <!-- logo banner -->
+
+    <RelativeLayout
+        android:id="@+id/qa_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="44.0dip"
+        android:background="@drawable/m_bar" >
+
+        <ImageView
+            android:id="@+id/path_logo"
+            style="@style/qa_logo"
+            android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:id="@+id/qa_bar_menu"
+            style="@style/qa_bar_button_left"
+            android:src="@drawable/m_bar_left" />
+
+        <ImageButton
+            android:id="@+id/qa_bar_friends"
+            style="@style/qa_bar_button_right"
+            android:src="@drawable/m_bar_right" />
+
+        <TextView
+            android:id="@+id/page_title_text"
+            style="@style/qa_bar_text"
+            android:layout_width="0.0dip"
+            android:layout_toLeftOf="@id/qa_bar_friends"
+            android:layout_toRightOf="@id/qa_bar_menu"
+            android:text="" />
+    </RelativeLayout>
+
+    <!-- <include layout="@layout/splash" /> -->
+
+</FrameLayout>

@@ -43,12 +43,12 @@ public final class Constants {
         /**
          * Base URL for all requests
          */
-        public static final String URL_BASE = "https://api.parse.com";
+        public static final String URL_BASE = "http://meetwithyou-georelation.rhcloud.com/api";
 
         /**
          * Authentication URL
          */
-        public static final String URL_AUTH = URL_BASE + "/1/login";
+        public static final String URL_AUTH = URL_BASE + "/Login";
 
         /**
          * List Users URL
@@ -72,10 +72,10 @@ public final class Constants {
         public static final String CONTENT_TYPE_JSON = "application/json";
         public static final String USERNAME = "username";
         public static final String PASSWORD = "password";
-        public static final String SESSION_TOKEN = "sessionToken";
+        public static final String SESSION_TOKEN = "sessionid";
 
 
-        public static final String URL_REG = "";
+        public static final String URL_REG = URL_BASE + "/Register";
 
     }
 

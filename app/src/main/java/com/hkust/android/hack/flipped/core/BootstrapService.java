@@ -9,6 +9,7 @@ import com.google.gson.JsonParseException;
 
 import java.io.IOException;
 import java.io.Reader;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -55,6 +56,10 @@ public class BootstrapService {
 
     private static class CheckInWrapper {
         private List<CheckIn> results;
+    }
+
+    private static class ActivityMessageWrapper {
+        private List<ActivityMessage> results;
     }
 
     private static class JsonException extends IOException {
@@ -223,6 +228,21 @@ public class BootstrapService {
                 return response.results;
             }
             return Collections.emptyList();
+        } catch (final HttpRequestException e) {
+            throw e.getCause();
+        }
+    }
+
+    public List<ActivityMessage> getActivityMessages() throws IOException {
+        ArrayList<ActivityMessage> messages = new ArrayList<ActivityMessage>();
+        messages.add(new ActivityMessage());
+        try {
+            final HttpRequest request = execute(HttpRequest.get(URL_CHECKINS));
+            final ActivityMessageWrapper response = fromJson(request, ActivityMessageWrapper.class);
+            if (response != null && response.results != null) {
+                messages.addAll(response.results);
+            }
+            return messages;
         } catch (final HttpRequestException e) {
             throw e.getCause();
         }
