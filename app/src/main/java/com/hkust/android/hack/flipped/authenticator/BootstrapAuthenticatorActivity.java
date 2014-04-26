@@ -8,16 +8,16 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
-import android.text.Html;
 import android.text.TextWatcher;
-import android.text.method.LinkMovementMethod;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnKeyListener;
+import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
@@ -86,6 +86,8 @@ public class BootstrapAuthenticatorActivity extends ActionBarAccountAuthenticato
     @InjectView(id.et_email) protected AutoCompleteTextView emailText;
     @InjectView(id.et_password) protected EditText passwordText;
     @InjectView(id.b_signin) protected Button signInButton;
+    @InjectView(id.ib_register) protected ImageButton registerButton;
+
 
     private final TextWatcher watcher = validationTextWatcher();
 
@@ -118,7 +120,11 @@ public class BootstrapAuthenticatorActivity extends ActionBarAccountAuthenticato
 
     @Override
     public void onCreate(Bundle bundle) {
+
         super.onCreate(bundle);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 
         accountManager = AccountManager.get(this);
 
@@ -163,9 +169,13 @@ public class BootstrapAuthenticatorActivity extends ActionBarAccountAuthenticato
         emailText.addTextChangedListener(watcher);
         passwordText.addTextChangedListener(watcher);
 
-        final TextView signUpText = (TextView) findViewById(id.tv_signup);
-        signUpText.setMovementMethod(LinkMovementMethod.getInstance());
-        signUpText.setText(Html.fromHtml(getString(string.signup_link)));
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivityForResult(new Intent(BootstrapAuthenticatorActivity.this, BootstrapAccountRegisterActivity.class), 1);
+            }
+        });
+
     }
 
     private List<String> userEmailAccounts() {
@@ -338,8 +348,13 @@ public class BootstrapAuthenticatorActivity extends ActionBarAccountAuthenticato
             intent.putExtra(KEY_AUTHTOKEN, authToken);
         }
 
+        accountManager.setAuthToken(account, Constants.Auth.BOOTSTRAP_ACCOUNT_TYPE, authToken);
+
+//        intent.putExtra(KEY_BOOLEAN_RESULT, accountid);
+
         setAccountAuthenticatorResult(intent.getExtras());
         setResult(RESULT_OK, intent);
+//        bus.post(produceFragmentRefreshEvent());
         finish();
     }
 
@@ -381,5 +396,16 @@ public class BootstrapAuthenticatorActivity extends ActionBarAccountAuthenticato
                         string.message_auth_failed);
             }
         }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK) {
+            setAccountAuthenticatorResult(data.getExtras());
+            setResult(RESULT_OK, data);
+//            bus.post(produceFragmentRefreshEvent());
+            finish();
+        }
+        if (resultCode == RESULT_CANCELED) { }
     }
 }

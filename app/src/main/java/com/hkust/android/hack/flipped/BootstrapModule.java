@@ -3,13 +3,13 @@ package com.hkust.android.hack.flipped;
 import android.accounts.AccountManager;
 import android.content.Context;
 
+import com.hkust.android.hack.flipped.authenticator.BootstrapAccountRegisterActivity;
 import com.hkust.android.hack.flipped.authenticator.BootstrapAuthenticatorActivity;
 import com.hkust.android.hack.flipped.authenticator.LogoutService;
 import com.hkust.android.hack.flipped.ui.MainActivity;
 import com.hkust.android.hack.flipped.ui.CheckInsListFragment;
 import com.hkust.android.hack.flipped.ui.NavigationDrawerFragment;
 import com.hkust.android.hack.flipped.ui.NewsListFragment;
-import com.hkust.android.hack.flipped.ui.UserListFragment;
 import com.squareup.otto.Bus;
 
 import javax.inject.Singleton;
@@ -31,7 +31,7 @@ import dagger.Provides;
                 CheckInsListFragment.class,
                 NavigationDrawerFragment.class,
                 NewsListFragment.class,
-                UserListFragment.class
+                BootstrapAccountRegisterActivity.class
         }
 )
 public class BootstrapModule {

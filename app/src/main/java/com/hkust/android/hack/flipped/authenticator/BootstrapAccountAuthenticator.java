@@ -66,7 +66,6 @@ class BootstrapAccountAuthenticator extends AbstractAccountAuthenticator {
 
     /**
      * This method gets called when the
-     * {@link com.hkust.android.hack.flipped.authenticator.ApiKeyProvider#getAuthKey()}
      * methods gets invoked.
      * This happens on a different process, so debugging it can be a beast.
      *
@@ -85,11 +84,20 @@ class BootstrapAccountAuthenticator extends AbstractAccountAuthenticator {
         Ln.d("Attempting to get authToken");
 
         final String authToken = AccountManager.get(context).peekAuthToken(account, authTokenType);
+        final String[] token = authToken.split(":");
+        int currentID = -1;
+        String currentToken = null;
+
+        if( token.length >= 2 ){
+            currentID = Integer.parseInt(token[0]);
+            currentToken = authToken.substring(token[0].length() + 1);
+        }
 
         final Bundle bundle = new Bundle();
         bundle.putString(KEY_ACCOUNT_NAME, account.name);
         bundle.putString(KEY_ACCOUNT_TYPE, Constants.Auth.BOOTSTRAP_ACCOUNT_TYPE);
-        bundle.putString(KEY_AUTHTOKEN, authToken);
+        bundle.putString(KEY_AUTHTOKEN, currentToken);
+        bundle.putInt("id", currentID);
 
         return bundle;
     }

@@ -33,4 +33,9 @@ public class BootstrapServiceProvider {
             throws IOException, AccountsException {
         return new BootstrapService(keyProvider.getAuthKey(activity), userAgentProvider);
     }
+
+    public BootstrapService getService(final Activity activity, boolean fake)
+            throws IOException, AccountsException {
+        return new BootstrapService(null, userAgentProvider);
+    }
 }
