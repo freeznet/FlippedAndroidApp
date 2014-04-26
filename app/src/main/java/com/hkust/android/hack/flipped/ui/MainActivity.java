@@ -3,6 +3,7 @@
 package com.hkust.android.hack.flipped.ui;
 
 import android.accounts.OperationCanceledException;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -10,6 +11,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.Loader;
 import android.support.v4.widget.DrawerLayout;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -27,6 +30,7 @@ import com.hkust.android.hack.flipped.BootstrapServiceProvider;
 import com.hkust.android.hack.flipped.R;
 import com.hkust.android.hack.flipped.core.ActivityMessage;
 import com.hkust.android.hack.flipped.core.BootstrapService;
+import com.hkust.android.hack.flipped.core.CheckIn;
 import com.hkust.android.hack.flipped.events.NavItemSelectedEvent;
 import com.hkust.android.hack.flipped.ui.view.ExtendedListView;
 import com.hkust.android.hack.flipped.ui.view.MenuRightAnimations;
@@ -36,6 +40,8 @@ import com.hkust.android.hack.flipped.util.UIUtils;
 import com.squareup.otto.Subscribe;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -48,7 +54,7 @@ import butterknife.Views;
  * If you need to remove the authentication from the application please see
  * {@link com.hkust.android.hack.flipped.authenticator.ApiKeyProvider#getAuthKey(android.app.Activity)}
  */
-public class MainActivity extends BootstrapFragmentActivity implements ExtendedListView.OnPositionChangedListener {
+public class MainActivity extends BootstrapFragmentActivity implements ExtendedListView.OnPositionChangedListener, LoaderManager.LoaderCallbacks<List<ActivityMessage>> {
 
     @Inject protected BootstrapServiceProvider serviceProvider;
 
@@ -78,10 +84,6 @@ public class MainActivity extends BootstrapFragmentActivity implements ExtendedL
 
         checkAuth();
 
-    }
-
-    private boolean isTablet() {
-        return UIUtils.isTablet(this);
     }
 
     @Override
@@ -116,6 +118,8 @@ public class MainActivity extends BootstrapFragmentActivity implements ExtendedL
             messageAdapter = new MainActivityAdapter(this, messages);
             dataListView.setAdapter(messageAdapter);
 
+//            getLoaderManager().initLoader(0, null, getl);
+
             Ln.d("Foo");
         }
 
@@ -126,7 +130,7 @@ public class MainActivity extends BootstrapFragmentActivity implements ExtendedL
 
             @Override
             public Boolean call() throws Exception {
-                final BootstrapService svc = serviceProvider.getService(MainActivity.this, true);
+                final BootstrapService svc = serviceProvider.getService(MainActivity.this);
                 return svc != null;
             }
 
@@ -245,5 +249,34 @@ public class MainActivity extends BootstrapFragmentActivity implements ExtendedL
         System.out.println("left=="+layoutParams.leftMargin+" top=="+layoutParams.topMargin+" bottom=="+layoutParams.bottomMargin+" right=="+layoutParams.rightMargin);
         layoutParams.setMargins(0, top, 0, 0);
         clockLayout.setLayoutParams(layoutParams);
+    }
+
+    @Override
+    public Loader<List<ActivityMessage>> onCreateLoader(int i, Bundle bundle) {
+        final List<ActivityMessage> initialItems = messages;
+        return new ThrowableLoader<List<ActivityMessage>>(MainActivity.this, messages) {
+
+            @Override
+            public List<ActivityMessage> loadData() throws Exception {
+                try {
+                    return serviceProvider.getService(MainActivity.this).getActivityMessages();
+
+                } catch (final OperationCanceledException e) {
+                    return initialItems;
+                }
+            }
+        };
+    }
+
+    @Override
+    public void onLoadFinished(Loader<List<ActivityMessage>> loader, List<ActivityMessage> o) {
+        messages = (ArrayList<ActivityMessage>) o;
+        messageAdapter = new MainActivityAdapter(this, messages);
+        dataListView.setAdapter(messageAdapter);
+    }
+
+    @Override
+    public void onLoaderReset(Loader<List<ActivityMessage>> loader) {
+
     }
 }

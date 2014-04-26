@@ -55,21 +55,33 @@
 
         <com.hkust.android.hack.flipped.ui.view.CircularImage
             android:id="@+id/cover_user_photo"
-            android:layout_width="54.0dip"
-            android:layout_height="54.0dip"
+            android:layout_width="87.0dip"
+            android:layout_height="87.0dip"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginBottom="61.0dip"
-            android:layout_marginLeft="47.0dip" />
+            android:layout_marginBottom="62.0dip"
+            android:layout_marginLeft="48.0dip" />
 
         <ImageView
-            android:layout_width="62.0dip"
-            android:layout_height="62.0dip"
+            android:layout_width="96.0dip"
+            android:layout_height="96.0dip"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_marginBottom="56.0dip"
             android:layout_marginLeft="43.0dip"
             android:src="@drawable/cover_avatar" />
+
+        <!--<de.hdodenhof.circleimageview.CircleImageView-->
+            <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+            <!--android:id="@+id/cover_user_photo"-->
+            <!--android:layout_width="96.0dip"-->
+            <!--android:layout_height="96.0dip"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_marginBottom="56.0dip"-->
+            <!--android:layout_marginLeft="43.0dip"-->
+            <!--app:border_width="2dp"-->
+            <!--app:border_color="#FF000000" />-->
 
         <TextView
             android:id="@+id/cover_clock"

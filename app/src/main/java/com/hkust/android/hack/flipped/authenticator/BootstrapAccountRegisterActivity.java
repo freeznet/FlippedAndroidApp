@@ -256,18 +256,22 @@ public class BootstrapAccountRegisterActivity extends ActionBarAccountAuthentica
 
                 final String query = String.format("data={\"username\":\"%s\", \"password\":\"%s\", \"email\":\"%s\"}", username, pass, emailadd);
 
-                HttpRequest request = post(Constants.Http.URL_REG).contentType("application/json").send(query);
+                HttpRequest request = post(Constants.Http.URL_REG).send(query);
 
                 Ln.d("Authentication response=%s", request.code());
 
                 if (request.ok()) {
-                    final User model = new Gson().fromJson(Strings.toString(request.buffer()), User.class);
+                    String body = request.body();
+                    Ln.d("Authentication response=%s", body);
+                    final User model = new Gson().fromJson(Strings.toString(body), User.class);
 //                    model.setEmail(emailadd);
 //                    token = model.getToken();
 //                    accountid = model.getId();
 //                    Storage.user = model;
 //                    Storage.writeUser();
-                    Ln.d("token = %s %d", token, accountid);
+                    Ln.d("token = %s %s", token, model.getStatus());
+                } else {
+                    Ln.d("Authentication response=%s", request.body());
                 }
 
                 return request.ok();

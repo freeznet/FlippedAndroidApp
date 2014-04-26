@@ -79,11 +79,11 @@ public class MainActivityAdapter extends BaseAdapter {
                 cover.setImageResource(coverList[new Random().nextInt(coverList.length)]);
                 CircularImage avatar = (CircularImage) convertView
                         .findViewById(R.id.cover_user_photo);
-                avatar.setImageResource(R.drawable.gauss0);
+                avatar.setImageResource(R.drawable.unknown);
 
-                RoundedCornersImage friend = (RoundedCornersImage) convertView
-                        .findViewById(R.id.cover_requests_photo);
-                friend.setImageResource(R.drawable.andrew0);
+//                RoundedCornersImage friend = (RoundedCornersImage) convertView
+//                        .findViewById(R.id.cover_requests_photo);
+//                friend.setImageResource(R.drawable.unknown);
 
                 // lay.setl
                 // ((LinearLayout)convertView).setLayoutParams(new

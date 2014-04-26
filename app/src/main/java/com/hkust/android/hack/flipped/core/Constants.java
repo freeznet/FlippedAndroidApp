@@ -75,7 +75,7 @@ public final class Constants {
         public static final String SESSION_TOKEN = "sessionid";
 
 
-        public static final String URL_REG = "";
+        public static final String URL_REG = URL_BASE + "/Register";
 
     }
 

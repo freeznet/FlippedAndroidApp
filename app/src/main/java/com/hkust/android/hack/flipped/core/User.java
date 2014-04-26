@@ -15,6 +15,8 @@ public class User implements Serializable {
     protected String line;
     protected String password;
 
+    protected String status;
+
     public String getUsername() {
         return username;
     }
@@ -77,5 +79,13 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
