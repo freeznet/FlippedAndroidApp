@@ -7,6 +7,7 @@
     <color name="text_inverted">#FFFFFF</color>
     <color name="text_title">#DFDFDF</color>
     <color name="text_drawer">#333333</color>
+    <color name="text_white">#ffffff</color>
     <color name="background_inbutton">#76C63C</color>
     <color name="pager_footer">#1fb6ed</color>
     <color name="pager_selected_text">#FFFFFF</color>

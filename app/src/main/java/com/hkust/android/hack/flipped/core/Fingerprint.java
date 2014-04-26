@@ -10,6 +10,7 @@ public class Fingerprint {
     public String time;
     public String[] macs;
     public double[] strengths;
+    public String location;
 
     public Fingerprint(String time,String[] macs, double[] strengths) {
         super();

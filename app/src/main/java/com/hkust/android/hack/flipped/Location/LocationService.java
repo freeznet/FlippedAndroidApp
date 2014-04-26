@@ -283,9 +283,11 @@ public class LocationService extends Service{
 
 
     public class LocationBinder extends Binder {
+
         public LocationService getServerInstance() {
             return LocationService.this;
         }
+
     }
 
     private boolean isFocus(String name) {

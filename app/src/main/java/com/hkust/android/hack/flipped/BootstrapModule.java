@@ -3,6 +3,7 @@ package com.hkust.android.hack.flipped;
 import android.accounts.AccountManager;
 import android.content.Context;
 
+import com.hkust.android.hack.flipped.Location.LocationService;
 import com.hkust.android.hack.flipped.authenticator.BootstrapAccountRegisterActivity;
 import com.hkust.android.hack.flipped.authenticator.BootstrapAuthenticatorActivity;
 import com.hkust.android.hack.flipped.authenticator.LogoutService;
@@ -34,7 +35,8 @@ import dagger.Provides;
                 NavigationDrawerFragment.class,
                 NewsListFragment.class,
                 BootstrapAccountRegisterActivity.class,
-                PostStatusActivity.class
+                PostStatusActivity.class,
+                LocationService.class,
         }
 )
 public class BootstrapModule {
