@@ -50,5 +50,6 @@
     <string name="choose_image">choose a picture</string>
     <string name="from_camera">from camera</string>
     <string name="from_gallery">from gallery</string>
+    <string name="title_activity_user_profile">UserProfile</string>
 
 </resources>

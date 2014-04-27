@@ -13,6 +13,7 @@ import com.hkust.android.hack.flipped.ui.NavigationDrawerFragment;
 import com.hkust.android.hack.flipped.ui.NewsListFragment;
 import com.hkust.android.hack.flipped.ui.PostStatusActivity;
 
+import com.hkust.android.hack.flipped.ui.UserProfile;
 import com.squareup.otto.Bus;
 
 import javax.inject.Singleton;
@@ -37,6 +38,7 @@ import dagger.Provides;
                 BootstrapAccountRegisterActivity.class,
                 PostStatusActivity.class,
                 LocationService.class,
+                UserProfile.class
         }
 )
 public class BootstrapModule {

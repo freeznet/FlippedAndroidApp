@@ -62,7 +62,6 @@
             android:name="com.hkust.android.hack.flipped.authenticator.BootstrapAccountRegisterActivity"
             android:excludeFromRecents="true" >
 
-
             <!--
                 No intent-filter here! This activity is only ever launched by
                 someone who explicitly knows the class name
@@ -75,6 +74,10 @@
         <activity
             android:name="com.hkust.android.hack.flipped.ui.PostStatusActivity"
             android:label="@string/title_activity_post_status" >
+        </activity>
+        <activity
+            android:name="com.hkust.android.hack.flipped.ui.UserProfile"
+            android:label="@string/title_activity_user_profile" >
         </activity>
     </application>
 

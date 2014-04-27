@@ -2,7 +2,6 @@
 <resources>
 
     <declare-styleable name="RoundedCornersImage">
-        <attr name="cornerRadius" format="dimension" />
     </declare-styleable>
 
     <declare-styleable name="ExtendedListView">

@@ -2,6 +2,7 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:flatui="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:background="@color/task_background"
     android:layout_height="match_parent"
@@ -101,7 +102,7 @@
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
                 android:paddingBottom="6dp"
-                android:text="unknown location"
+                android:text="HKUST LG7"
                 android:drawableLeft="@drawable/ic_action_place_small"
                 android:drawablePadding="10dp"
                 android:id="@+id/tv_intro" />
@@ -196,8 +197,9 @@
                 android:layout_centerVertical="true"
                 android:id="@+id/linearLayout">
 
-                <EditText
-                    android:layout_width="fill_parent"
+
+                <com.cengalabs.flatui.views.FlatEditText
+                    android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:text=""
                     android:id="@+id/et_taskcontent"
@@ -207,8 +209,10 @@
                     android:inputType="textMultiLine"
                     android:gravity="top"
                     android:paddingLeft="4dp"
-                    android:background="@drawable/setbar_bg"
-                    />
+                    flatui:fieldStyle="transparentBox"
+                    flatui:cornerRadius="3dip"
+                    flatui:theme="Deep"/>
+
 
             </LinearLayout>
 
@@ -231,16 +235,22 @@
             android:paddingTop="8dp"
             android:paddingBottom="8dp">
 
-            <Button
-                android:layout_width="fill_parent"
-                android:layout_height="32dp"
-                android:text="leave a footprint"
+
+            <com.cengalabs.flatui.views.FlatEditText
+                android:layout_width="match_parent"
+                android:layout_height="60px"
+                flatui:theme="Sky"
+                flatui:fieldStyle="flat"
+                flatui:cornerRadius="3dip"
+                android:text="Leave a Footprint"
                 android:gravity="center"
                 android:id="@+id/bt_submit"
                 android:background="?attr/selectableItemBackground"
                 android:paddingLeft="32dp"
                 android:paddingRight="32dp"
-                android:drawableLeft="@drawable/ic_action_send_dark"/>
+                />
+
+
 
         </LinearLayout>
 
