@@ -20,7 +20,7 @@ public class ActivityMessage {
     private Date datetime;
 
     public static final int MESSAGE_TYPE_MEET_PEOPLE = 1;
-    public static final int MESSAGE_TYPE_MEET_STATUS = 1;
+    public static final int MESSAGE_TYPE_MEET_STATUS = 2;
 
     public int getId() {
         return id;
@@ -100,5 +100,17 @@ public class ActivityMessage {
         if( datetime == null ) getDatetime();
         if( datetime == null ) return 0;
         return datetime.getMinutes();
+    }
+
+    public ActivityMessage() {
+    }
+
+    public ActivityMessage(String authorName, String time, String content, String location, int meetcnt) {
+        this.type = MESSAGE_TYPE_MEET_PEOPLE;
+        this.authorName = authorName;
+        this.time = time;
+        this.content = content;
+        this.location = location;
+        this.meetcnt = meetcnt;
     }
 }

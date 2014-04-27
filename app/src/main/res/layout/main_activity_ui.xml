@@ -71,20 +71,20 @@
         android:layout_height="44.0dip"
         android:background="@drawable/m_bar" >
 
-        <!--<ImageView-->
-            <!--android:id="@+id/path_logo"-->
-            <!--style="@style/qa_logo"-->
-            <!--android:layout_centerHorizontal="true" />-->
-
         <ImageView
-            android:id="@+id/qa_bar_menu"
-            style="@style/qa_bar_button_left"
-            android:src="@drawable/m_bar_left" />
+            android:id="@+id/path_logo"
+            style="@style/qa_logo"
+            android:layout_centerHorizontal="true" />
 
-        <ImageButton
-            android:id="@+id/qa_bar_friends"
-            style="@style/qa_bar_button_right"
-            android:src="@drawable/m_bar_right" />
+        <!--<ImageView-->
+            <!--android:id="@+id/qa_bar_menu"-->
+            <!--style="@style/qa_bar_button_left"-->
+            <!--android:src="@drawable/m_bar_left" />-->
+
+        <!--<ImageButton-->
+            <!--android:id="@+id/qa_bar_friends"-->
+            <!--style="@style/qa_bar_button_right"-->
+            <!--android:src="@drawable/m_bar_right" />-->
 
         <TextView
             android:id="@+id/page_title_text"

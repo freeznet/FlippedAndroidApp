@@ -114,6 +114,17 @@ public class MainActivity extends BootstrapFragmentActivity implements ExtendedL
 
             ActivityMessage header = new ActivityMessage();
             messages.add(header);
+            ActivityMessage activityMessage1 = new ActivityMessage("Lucas", "2014-04-27 10:09:19", "You meet Lucas @ HKUST", "HKUST", 1);
+            ActivityMessage activityMessage6 = new ActivityMessage("Joshua", "2014-04-27 10:11:03", "You meet Joshua @ HKUST", "HKUST", 1);
+            ActivityMessage activityMessage2 = new ActivityMessage("Lucas", "2014-04-27 10:39:43", "You meet Lucas @ HKUST", "HKUST", 2);
+            ActivityMessage activityMessage3 = new ActivityMessage("Lucas", "2014-04-27 11:10:21", "You meet Lucas @ HKUST", "HKUST", 3);
+
+
+            messages.add(activityMessage3);
+            messages.add(activityMessage2);
+            messages.add(activityMessage6);
+            messages.add(activityMessage1);
+
 
             messageAdapter = new MainActivityAdapter(this, messages);
             dataListView.setAdapter(messageAdapter);
@@ -130,7 +141,7 @@ public class MainActivity extends BootstrapFragmentActivity implements ExtendedL
 
             @Override
             public Boolean call() throws Exception {
-                final BootstrapService svc = serviceProvider.getService(MainActivity.this);
+                final BootstrapService svc = serviceProvider.getService(MainActivity.this, true);
                 return svc != null;
             }
 
@@ -216,14 +227,14 @@ public class MainActivity extends BootstrapFragmentActivity implements ExtendedL
     @Override
     public void onPositionChanged(ExtendedListView listView, int firstVisiblePosition, View scrollBarPanel) {
         TextView datestr = ((TextView) findViewById(R.id.clock_digital_date));
-        datestr.setText("上午");
+        datestr.setText("AM");
         ActivityMessage msg = messages.get(firstVisiblePosition);
 
         int hour = msg.getHour();
         String tmpstr = "";
         if (hour > 12) {
             hour = hour - 12;
-            datestr.setText("下午");
+            datestr.setText("PM");
             tmpstr += " ";
         } else if (0 < hour && hour < 10) {
 

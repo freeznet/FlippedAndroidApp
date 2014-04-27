@@ -240,7 +240,7 @@
         <item name="android:layout_width">65.0dip</item>
         <item name="android:layout_height">27.0dip</item>
         <item name="android:layout_marginTop">7.0dip</item>
-        <item name="android:src">@drawable/m_logo</item>
+        <item name="android:src">@drawable/logo_done</item>
     </style>
     <style name="thumbnail_emotion_button">
         <item name="android:background">@drawable/photo_pill</item>

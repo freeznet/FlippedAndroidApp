@@ -236,16 +236,28 @@ public class BootstrapService {
     public List<ActivityMessage> getActivityMessages() throws IOException {
         ArrayList<ActivityMessage> messages = new ArrayList<ActivityMessage>();
         messages.add(new ActivityMessage());
-        try {
-            final HttpRequest request = execute(HttpRequest.get(URL_CHECKINS));
-            final ActivityMessageWrapper response = fromJson(request, ActivityMessageWrapper.class);
-            if (response != null && response.results != null) {
-                messages.addAll(response.results);
-            }
-            return messages;
-        } catch (final HttpRequestException e) {
-            throw e.getCause();
-        }
+
+        ActivityMessage activityMessage1 = new ActivityMessage("Lucas", "2014-04-27 10:09:19", "You meet lucas @ HKUST", "HKUST", 1);
+        ActivityMessage activityMessage2 = new ActivityMessage("Lucas", "2014-04-27 10:39:43", "You meet lucas @ HKUST", "HKUST", 2);
+        ActivityMessage activityMessage3 = new ActivityMessage("Lucas", "2014-04-27 10:22:19", "You meet lucas @ HKUST", "HKUST", 1);
+        ActivityMessage activityMessage4 = new ActivityMessage("Lucas", "2014-04-27 10:09:19", "You meet lucas @ HKUST", "HKUST", 1);
+        ActivityMessage activityMessage5 = new ActivityMessage("Lucas", "2014-04-27 10:09:19", "You meet lucas @ HKUST", "HKUST", 1);
+
+        messages.add(activityMessage1);
+        messages.add(activityMessage2);
+
+        return messages;
+
+//        try {
+//            final HttpRequest request = execute(HttpRequest.get(URL_CHECKINS));
+//            final ActivityMessageWrapper response = fromJson(request, ActivityMessageWrapper.class);
+//            if (response != null && response.results != null) {
+//                messages.addAll(response.results);
+//            }
+//            return messages;
+//        } catch (final HttpRequestException e) {
+//            throw e.getCause();
+//        }
     }
 
 }

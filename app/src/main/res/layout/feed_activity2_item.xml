@@ -42,7 +42,7 @@
             android:background="@drawable/moment_smalldot"
             android:src="@drawable/moment_dot_colored" />
 
-        <com.ckt.vas.miles.ui.views.CircularImage
+        <com.hkust.android.hack.flipped.ui.view.CircularImage
             android:id="@+id/moment_people_photo"
             style="@style/moment_people_photo"
             android:layout_alignLeft="@id/moment_bigdot"

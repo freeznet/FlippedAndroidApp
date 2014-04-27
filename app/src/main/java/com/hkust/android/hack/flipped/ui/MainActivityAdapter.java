@@ -101,8 +101,10 @@ public class MainActivityAdapter extends BaseAdapter {
                 ImageView authorView = (ImageView) convertView
                         .findViewById(R.id.mixed_feed_author_photo);
 
-                Picasso.with(context).load(message.getAuthorAvatar()).into(authorView);
-//                authorView.setImageResource(message.getAuthorAvatar());
+
+
+//                Picasso.with(context).load(message.getAuthorAvatar()).error(R.drawable.unknown).into(authorView);
+                authorView.setImageResource(R.drawable.unknown);
 
                 // author img
                 TextView authorName = (TextView) convertView
@@ -136,10 +138,14 @@ public class MainActivityAdapter extends BaseAdapter {
                     // thought_main.setText(message.getBody());
 //                    String txtstr = String.format(TEXT_FORMAT, message.getAuthorName(),
 //                            message.getStoreName());
+                    TextView meetcnt = (TextView) view.findViewById(R.id.comment_button_text);
+                    TextView meettime = (TextView) view.findViewById(R.id.comment_sub);
 
                     Spanned spt = Html.fromHtml(message.getContent());
 
                     thought_main.setText(spt);
+                    meetcnt.setText(String.valueOf(message.getMeetcnt()));
+                    meettime.setText(message.getTime());
 
                     contentLayout.addView(view);
 
